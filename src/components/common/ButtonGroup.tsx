@@ -3,14 +3,14 @@ import styles from '../../css/common/ButtonGroup.module.css'
 import { ButtonOptions } from '../../types/ButtonGroup.types'
 
 interface Props {
-	actions: ButtonOptions[]
+	options: ButtonOptions[]
 }
-const ButtonGroup = ({ actions }: Props): ReactElement => {
+const ButtonGroup = ({ options }: Props): ReactElement => {
 	return (
 		<div className={styles.container}>
-			{actions.map((action, index) => (
-				<button key={index} onClick={action.onClick} disabled={action.disabled}>
-					{action.label}
+			{options.map((option, index) => (
+				<button key={index} onClick={option.onClick} disabled={option.disabled}>
+					{option.label}
 				</button>
 			))}
 		</div>

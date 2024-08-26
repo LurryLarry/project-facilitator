@@ -28,7 +28,6 @@ const ProjectFacilitator = (): ReactElement => {
 
 	const handleSelect = (projectId: number, state: ProjectState): void => {
 		setSelectedState(state)
-
 		setSelectedProjectIds((prevIds) => {
 			if (prevIds.includes(projectId)) {
 				return prevIds.filter((id) => id !== projectId)
@@ -58,7 +57,7 @@ const ProjectFacilitator = (): ReactElement => {
 		setSelectedState(null)
 	}
 
-	const actions: ButtonOptions[] = [
+	const options: ButtonOptions[] = [
 		{ label: 'Launch project', onClick: handleLaunch, disabled: !isLaunchAllowed },
 		{ label: 'Finish project', onClick: handleFinish, disabled: !isFinishAllowed },
 	]
@@ -71,7 +70,7 @@ const ProjectFacilitator = (): ReactElement => {
 				selectedProjectIds={selectedProjectIds}
 				selectedState={selectedState}
 			/>
-			<ButtonGroup actions={actions} />
+			<ButtonGroup options={options} />
 		</div>
 	)
 }
