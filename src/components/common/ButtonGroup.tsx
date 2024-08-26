@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 import styles from '../../css/common/ButtonGroup.module.css'
-import { ButtonOptions } from '../../types/ButtonGroup'
+import { ButtonOptions } from '../../types/ButtonGroup.types'
 
 interface Props {
 	actions: ButtonOptions[]
