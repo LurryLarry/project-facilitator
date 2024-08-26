@@ -1,0 +1,44 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	width: 100%;
+	cursor: pointer;
+}
+
+.container:hover {
+	background-color: lightblue;
+}
+
+.container.selected {
+	color: white;
+	background-color: darkblue;
+}
+
+.container.selected:hover {
+	opacity: 0.8;
+}
+
+.container.notSelectable {
+	pointer-events: none;
+}
+
+.name {
+	font-weight: bold;
+}
+
+.state {
+	border-bottom: 5px solid lightgray;
+}
+
+.launched {
+	border-right: 80px solid blue;
+}
+
+.finished {
+	border-right: 80px solid red;
+}
+
+.notStarted {
+	border-right: 80px solid gray;
+}
