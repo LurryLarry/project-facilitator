@@ -1,9 +1,9 @@
 import { ReactElement } from 'react'
 import styles from '../../css/common/ButtonGroup.module.css'
-import { ButtonOptions } from '../../types/ButtonGroup.types'
+import { ButtonOption } from '../../types/ButtonGroup.types'
 
 interface Props {
-	options: ButtonOptions[]
+	options: ButtonOption[]
 }
 const ButtonGroup = ({ options }: Props): ReactElement => {
 	return (
