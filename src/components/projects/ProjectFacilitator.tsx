@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useState } from 'react'
+import { ReactElement, useState } from 'react'
 import ProjectList from './ProjectList'
 import { Project, ProjectState } from '../../types/Project.types'
 import { ButtonOptions } from '../../types/ButtonGroup.types'
@@ -20,20 +20,16 @@ const ProjectFacilitator = (): ReactElement => {
 	const isLaunchAllowed = selectedProjectIds.length > 0 && selectedState !== 'Launched' && selectedState !== 'Finished'
 	const isFinishAllowed = selectedProjectIds.length > 0 && selectedState === 'Launched'
 
-	useEffect(() => {
-		if (selectedProjectIds.length === 0) {
-			setSelectedState(null)
-		}
-	}, [selectedProjectIds])
-
 	const handleSelect = (projectId: number, state: ProjectState): void => {
-		setSelectedState(state)
 		setSelectedProjectIds((prevIds) => {
-			if (prevIds.includes(projectId)) {
-				return prevIds.filter((id) => id !== projectId)
-			} else {
-				return [...prevIds, projectId]
-			}
+			const newSelectedIds = prevIds.includes(projectId)
+				? prevIds.filter((id) => id !== projectId)
+				: [...prevIds, projectId]
+
+			const newState = newSelectedIds.length === 0 ? null : state
+			setSelectedState(newState)
+
+			return newSelectedIds
 		})
 	}
 
