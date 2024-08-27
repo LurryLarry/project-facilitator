@@ -1,7 +1,7 @@
 import { ReactElement, useState } from 'react'
 import ProjectList from './ProjectList'
 import { Project, ProjectState } from '../../types/Project.types'
-import { ButtonOptions } from '../../types/ButtonGroup.types'
+import { ButtonOption } from '../../types/ButtonGroup.types'
 import ButtonGroup from '../common/ButtonGroup'
 import styles from '../../css/projects/ProjectFacilitator.module.css'
 
@@ -53,7 +53,7 @@ const ProjectFacilitator = (): ReactElement => {
 		setSelectedState(null)
 	}
 
-	const options: ButtonOptions[] = [
+	const options: ButtonOption[] = [
 		{ label: 'Launch project', onClick: handleLaunch, disabled: !isLaunchAllowed },
 		{ label: 'Finish project', onClick: handleFinish, disabled: !isFinishAllowed },
 	]
